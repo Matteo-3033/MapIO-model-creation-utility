@@ -1,10 +1,10 @@
 # CamIO Model Builder
 
-This repository provides utility code to build a graph for the [LLM CamIO](https://github.com/Coughlan-Lab/simple_camio/tree/llm) project.
+This repository provides utility code to build a graph for the [MapIO](https://github.com/Coughlan-Lab/simple_camio/tree/llm) project.
 
 ## Overview
 
-The CamIO Graph Builder allows you to create a detailed graph representation of tactile maps, complete with points of interest (PoIs), intersections, and street information. This graph serves as input for the CamIO system, enhancing accessibility by offering more comprehensive map data.
+The MapIO Model Builder allows you to create a detailed graph representation of tactile maps, complete with points of interest (PoIs), intersections, and street information. This graph serves as input for the CamIO system, enhancing accessibility by offering more comprehensive map data.
 
 ## Prerequisites
 
@@ -43,9 +43,11 @@ Finally, click **Save** to save the labeled map in the specified output director
 ### 4. Customize and Run the Jupyter Notebook
 
 1. Copy either `draw_detroit.ipynb` or `draw_new_york.ipynb` to a new notebook:
-
     - Use **draw_detroit.ipynb** if you have a small set of PoIs and want to remap New York PoIs onto your map.
     - Use **draw_new_york.ipynb** to map only your own PoIs.
+
+Note that these notebooks will convert nodes and PoIs coordinates to feet. All units in the final model will be in feet.
+The origin (0,0) will be set to the top-left corner of your map image.
 
 2. Edit the content of the first cell to match your map details.
 
