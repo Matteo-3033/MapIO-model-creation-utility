@@ -1,5 +1,7 @@
+from typing import Any, Dict, List, Optional, Union
+
 from utils import StrEnum
-from typing import Any, Dict, Optional, Union, List
+
 from .coords import Coords, Position
 
 
@@ -74,13 +76,13 @@ class Node(Position):
             streets = sorted(filter(lambda s: s != street, set(self.adjacents_streets)))
             if len(streets) == 0:
                 description += "in the middle of a block"
-
-            description += (
-                "near the intersection with "
-                + ", ".join(streets[:-1])
-                + (" and " if len(streets) > 1 else "")
-                + streets[-1]
-            )
+            else:
+                description += (
+                    "near the intersection with "
+                    + ", ".join(streets[:-1])
+                    + (" and " if len(streets) > 1 else "")
+                    + streets[-1]
+                )
 
         return description
 
